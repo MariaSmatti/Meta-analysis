@@ -1,5 +1,33 @@
 # 🧬 GWAS Meta-Analysis Tutorial
 
+### 🧬 What is Meta-analysis in GWAS?
+
+In genome-wide association studies (GWAS), a meta-analysis is a statistical method where we combine summary statistics from multiple independent studies that looked at the same trait (e.g., height, BMI, disease risk).
+
+Instead of pooling raw genotype/phenotype data (which is often impossible due to privacy or logistics), we take each study’s results (effect size, SE, P-value per SNP) and aggregate them to produce a single, more powerful estimate.
+![](Images/Meta_analysis.png)
+✅ Why do we do Meta-analysis?
+
+1. Increase statistical power
+    - A single GWAS might not have enough participants to detect variants with small effects.
+    - By combining studies, we effectively increase sample size → better ability to detect true associations.
+
+2. Improve precision of effect size estimates
+    - Meta-analysis reduces noise by averaging across studies.
+    - Standard errors shrink when more data contributes.
+
+3. Generalize across populations
+    - Studies may come from different cohorts (European, African, Asian, etc.).
+    - Meta-analysis checks whether associations replicate across diverse backgrounds.
+
+4. Detect heterogeneity
+    - Sometimes, a SNP has different effects across populations/studies.
+    - Meta-analysis allows testing for heterogeneity (e.g., Cochran’s Q test, I² statistic).
+
+5. Avoid raw data sharing issues
+    - Instead of sharing sensitive raw genotypes, researchers can share summary stats, which are easier to distribute and harmonize.
+---
+
 This tutorial walks you through performing a **meta-analysis of GWAS summary statistics**.  
 We will cover: preparation & QC, harmonization, running meta-analysis (with [METAL](https://genome.sph.umich.edu/wiki/METAL_Documentation)), diagnostics, and downstream analyses.
 
